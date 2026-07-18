@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nguyễn Hồng Hà My | Digital Portfolio</title>
     <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* --- ĐỊNH NGHĨA BIẾN MÀU SẮC MODERN COZY YELLOW --- */
         :root {
-            --primary-yellow: #d97706;     /* Vàng hổ phách hiện đại */
-            --dark-yellow: #b45309;        /* Vàng đất trầm lịch sự */
+            --primary-yellow: #d97706;     /* Vàng hổ phách chủ đạo */
+            --dark-yellow: #b45309;        /* Vàng đất trầm */
             --light-yellow: #fef3c7;       /* Vàng kem nhẹ */
             --neutral-charcoal: #1e293b;   /* Xám than đậm chuyên nghiệp */
             --text-muted: #64748b;         /* Xám ghi cho nội dung phụ */
-            --bg-cream: #fefefe;           /* Nền trắng sữa tối giản */
-            --bg-card: rgba(255, 255, 255, 0.96);
+            --bg-cream: #fdfbf7;           /* Nền kem ấm tối giản */
+            --bg-card: rgba(255, 255, 255, 0.98);
             --border-clean: 1px solid #cbd5e1;
             --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
@@ -34,11 +34,10 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             color: var(--neutral-charcoal);
             line-height: 1.7;
-            /* Phủ một lớp màu kem ấm 95% lên ảnh back.jpg để giữ sự tinh tế và tối giản */
-            background-image: linear-gradient(rgba(253, 251, 247, 0.95), rgba(253, 251, 247, 0.95)), url('back.jpg');
+            background-image: linear-gradient(rgba(253, 251, 247, 0.96), rgba(253, 251, 247, 0.96)), url('back.jpg');
             background-size: cover;
             background-repeat: repeat;
             background-attachment: fixed;
@@ -66,7 +65,7 @@
             transform: translateX(-50%);
             width: 90%;
             max-width: 1100px;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(10px);
             border: var(--border-clean);
             border-radius: 12px;
@@ -94,7 +93,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 20px;
             align-items: center;
         }
 
@@ -127,7 +126,7 @@
             transform: translateY(-1px);
         }
 
-        /* --- HERO SECTION / GIỚI THIỆU CÁ NHÂN & MỤC TIÊU PORTFOLIO --- */
+        /* --- HERO SECTION & PORTFOLIO OBJECTIVES --- */
         .hero {
             padding: 140px 20px 40px 20px;
             max-width: 1100px;
@@ -638,7 +637,55 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- STYLES FOR SPECIFIC INTERACTIVE SECTIONS INSIDE MODALS --- */
+        /* --- TREE STRUCTURE FOR ASSIGNMENT 1 --- */
+        .tree-container {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin: 15px 0;
+        }
+
+        .tree-node {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .tree-node::before {
+            content: "";
+            position: absolute;
+            left: -15px;
+            top: 0;
+            bottom: 12px;
+            width: 1px;
+            border-left: 1px dashed #94a3b8;
+        }
+
+        .tree-node::after {
+            content: "";
+            position: absolute;
+            left: -15px;
+            top: 10px;
+            width: 12px;
+            height: 1px;
+            border-top: 1px dashed #94a3b8;
+        }
+
+        .tree-icon {
+            margin-right: 5px;
+        }
+
+        .tree-folder {
+            color: #d97706;
+            font-weight: bold;
+        }
+
+        .tree-file {
+            color: #0f766e;
+        }
+
         /* Timeline for Assignment 1 */
         .step-timeline {
             position: relative;
@@ -697,7 +744,7 @@
         }
 
         .academic-table th, .academic-table td {
-            border: 1px solid #e2e8f0;
+            border: 1px solid #cbd5e1;
             padding: 10px;
             text-align: left;
         }
@@ -769,13 +816,42 @@
             font-size: 0.9rem;
         }
 
-        /* --- FOOTER --- */
-        footer {
+        /* --- COLLABORATION FLOW FOR ASSIGNMENT 4 --- */
+        .collaboration-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
             text-align: center;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.5);
-            border-top: 1px solid #e2e8f0;
-            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .collaboration-flow {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .flow-step {
+            background: #f8fafc;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 15px;
+            position: relative;
+        }
+
+        .flow-step i {
+            font-size: 1.5rem;
+            color: var(--primary-yellow);
+            margin-bottom: 10px;
+        }
+
+        .flow-step h5 {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .flow-step p {
+            font-size: 0.8rem;
             color: var(--text-muted);
         }
     </style>
@@ -853,11 +929,11 @@
             <!-- Bài tập 1 -->
             <div class="project-card" onclick="openModal(1)">
                 <div class="card-header">
-                    <span class="card-num">Bài tập 1</span>
+                    <span class="card-num">Bài 1</span>
                     <i class="fa-solid fa-folder-tree card-icon"></i>
                 </div>
                 <div class="card-body">
-                    <h3>Quản trị Tệp tin & Thư mục</h3>
+                    <h3>Thao tác cơ bản với tệp tin và thư mục</h3>
                     <p>Quy trình thực hành 12 bước toàn diện trên Windows File Explorer nhằm thiết lập không gian làm việc số khoa học và ngăn nắp.</p>
                 </div>
                 <button class="btn-detail">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></button>
@@ -866,11 +942,11 @@
             <!-- Bài tập 2 -->
             <div class="project-card" onclick="openModal(2)">
                 <div class="card-header">
-                    <span class="card-num">Bài tập 2</span>
+                    <span class="card-num">Bài 2</span>
                     <i class="fa-solid fa-sheet-plastic card-icon"></i>
                 </div>
                 <div class="card-body">
-                    <h3>Tìm kiếm & Đánh giá Tài liệu</h3>
+                    <h3>Tìm kiếm và đánh giá thông tin học thuật</h3>
                     <p>Đánh giá chuyên sâu 11 tài liệu học thuật theo phân nhóm độ tin cậy về chủ đề "AI ứng dụng trong dịch thuật văn học nghệ thuật".</p>
                 </div>
                 <button class="btn-detail">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></button>
@@ -879,11 +955,11 @@
             <!-- Bài tập 3 -->
             <div class="project-card" onclick="openModal(3)">
                 <div class="card-header">
-                    <span class="card-num">Bài tập 3</span>
+                    <span class="card-num">Bài 3</span>
                     <i class="fa-solid fa-keyboard card-icon"></i>
                 </div>
                 <div class="card-body">
-                    <h3>Kỹ thuật Prompt Engineering</h3>
+                    <h3>Viết Prompt hiệu quả cho các tác vụ học tập</h3>
                     <p>Khảo sát so sánh 3 tác vụ học tập dựa trên Thang đo Bloom và Kỹ thuật Feynman, xây dựng bộ nguyên tắc câu lệnh C.R.E.A.T.E.</p>
                 </div>
                 <button class="btn-detail">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></button>
@@ -892,11 +968,11 @@
             <!-- Bài tập 4 -->
             <div class="project-card" onclick="openModal(4)">
                 <div class="card-header">
-                    <span class="card-num">Bài tập 4</span>
+                    <span class="card-num">Bài 4</span>
                     <i class="fa-solid fa-users-viewfinder card-icon"></i>
                 </div>
                 <div class="card-body">
-                    <h3>Đồng hành & Cộng tác nhóm</h3>
+                    <h3>Sử dụng công cụ cộng tác trực tuyến cho dự án nhóm</h3>
                     <p>Quy trình tổ chức dự án nhóm qua Trello, Zalo/Meet và Drive giúp tối ưu hóa luồng tương tác và phân cấp tài liệu đồng bộ.</p>
                 </div>
                 <button class="btn-detail">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></button>
@@ -905,11 +981,11 @@
             <!-- Bài tập 5 -->
             <div class="project-card" onclick="openModal(5)">
                 <div class="card-header">
-                    <span class="card-num">Bài tập 5</span>
+                    <span class="card-num">Bài 5</span>
                     <i class="fa-solid fa-paintbrush card-icon"></i>
                 </div>
                 <div class="card-body">
-                    <h3>Sáng tạo cùng AI tạo sinh</h3>
+                    <h3>Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h3>
                     <p>Chiến dịch chuyển dịch Triết học sang hơi thở Gen Z qua Infographic tự thiết kế. Thử nghiệm prompt tạo ảnh và bố cục UI/UX.</p>
                 </div>
                 <button class="btn-detail">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></button>
@@ -918,11 +994,11 @@
             <!-- Bài tập 6 -->
             <div class="project-card" onclick="openModal(6)">
                 <div class="card-header">
-                    <span class="card-num">Bài tập 6</span>
+                    <span class="card-num">Bài 6</span>
                     <i class="fa-solid fa-scale-balanced card-icon"></i>
                 </div>
                 <div class="card-body">
-                    <h3>Đạo đức & Trách nhiệm AI</h3>
+                    <h3>Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h3>
                     <p>Khảo sát chính sách học thuật số của trường học và nghiên cứu thực nghiệm Tập tục cưới hỏi Thái Đen để chống ảo tưởng AI.</p>
                 </div>
                 <button class="btn-detail">Xem chi tiết <i class="fa-solid fa-arrow-right"></i></button>
@@ -954,7 +1030,7 @@
                 <div class="summary-card">
                     <h4><i class="fa-solid fa-lightbulb"></i> Bài học Kinh nghiệm</h4>
                     <p>
-                        Sự tiện lợi của AI dễ dẫn đến hiện tượng "lười biếng tư duy" (Cognitive Laziness). Mình đúc kết ra rằng: AI là người trợ lý đắc lực, nhưng quyền kiểm duyệt và sự phản biện tối cao phải thuộc về bộ óc con người. Luôn kiểm thử dữ liệu nguồn, minh bạch hóa câu lệnh và tích hợp chất xám cá nhân tối thiểu 60% là nguyên tắc liêm chính sống còn.
+                        Sự tiện lợi của AI dễ dẫn đến hiện tượng "lười biếng tư duy" (Cognitive Laziness). Mình đúc kết ra rằng: AI là người trợ lý đắc lực, nhưng quyền kiểm duyệt và sự phản biện tối cao phải thuộc về bộ óc con người. Luôn kiểm thử dữ liệu nguồn, minh bạch hóa câu lệnh và tích hợp chất xám cá nhân tối thiểu 60% là nguyên tắc liêm chính học thuật sống còn.
                     </p>
                 </div>
             </div>
@@ -986,11 +1062,11 @@
 
     <!-- --- JAVASCRIPT XỬ LÝ CHUYỂN ĐỘNG & TƯƠNG TÁC TAB --- -->
     <script>
-        /* --- DỮ LIỆU NỘI DUNG CHI TIẾT BÀI TẬP (KHÔNG CẮT BỚT, TRÌNH BÀY ĐẦY ĐỦ NHẤT) --- */
+        /* --- DỮ LIỆU NỘI DUNG CHI TIẾT BÀI TẬP --- */
         const modalData = {
             1: {
-                title: "Quản trị Tệp tin & Thư mục trên Hệ điều hành Windows",
-                tag: "Bài tập 1",
+                title: "Thao tác cơ bản với tệp tin và thư mục",
+                tag: "Bài 1 - Mục 1.4",
                 icon: "fa-folder-tree",
                 tabs: {
                     overview: `
@@ -998,15 +1074,18 @@
                         <p>Thành thạo các thao tác cơ bản với tệp tin và hệ điều hành máy tính để xây dựng cấu trúc lưu trữ khoa học, gọn gàng, tăng cường hiệu suất học tập và giảm thiểu rủi ro thất lạc tài liệu số.</p>
                         
                         <div class="highlight-box">
-                            "Không gian làm việc số sạch sẽ và có tổ chức chính là bước khởi đầu vững chắc nhất của năng lực quản trị số."
+                            "Mục tiêu là quản lý cấu trúc thư mục tối ưu và quy tắc đặt tên tệp đã thiết lập một cách chuẩn xác."
                         </div>
                         
-                        <h4><i class="fa-solid fa-circle-check"></i> Các kỹ năng cốt lõi đạt được</h4>
-                        <ul>
-                            <li>Hiểu rõ logic đường dẫn của phân vùng lưu trữ hệ thống.</li>
-                            <li>Kỹ năng di chuyển dữ liệu (Cut/Copy & Paste) nhịp nhàng không sai sót.</li>
-                            <li>Cơ chế an toàn dữ liệu: Xóa vĩnh viễn và khôi phục tệp tin lỗi từ Thùng rác.</li>
-                        </ul>
+                        <h4><i class="fa-solid fa-sitemap"></i> Minh họa sơ đồ cấu trúc thư mục thực hành bằng CSS</h4>
+                        <div class="tree-container">
+                            <div class="tree-node"><span class="tree-icon">📂</span><span class="tree-folder">Documents</span></div>
+                            <div class="tree-node" style="margin-left: 20px;"><span class="tree-icon">📂</span><span class="tree-folder">ThucHanh_NguyenHongHaMy</span></div>
+                            <div class="tree-node" style="margin-left: 40px;"><span class="tree-icon">📄</span><span class="tree-file">GhiChuQuanTrong.txt</span> <span style="color:#64748b; font-size:0.8rem;">(Tệp đã khôi phục)</span></div>
+                            <div class="tree-node" style="margin-left: 40px;"><span class="tree-icon">📂</span><span class="tree-folder">TaiLieu</span></div>
+                            <div class="tree-node" style="margin-left: 60px;"><span class="tree-icon">📄</span><span class="tree-file">GhiChuQuanTrong.txt</span> <span style="color:#64748b; font-size:0.8rem;">(Bản sao)</span></div>
+                            <div class="tree-node" style="margin-left: 60px;"><span class="tree-icon">📄</span><span class="tree-file">DiChuyen.txt</span> <span style="color:#64748b; font-size:0.8rem;">(Tệp đã di chuyển)</span></div>
+                        </div>
                     `,
                     details: `
                         <h4><i class="fa-solid fa-list-ol"></i> Quy trình 12 bước thực hành chi tiết trên File Explorer</h4>
@@ -1068,8 +1147,8 @@
                 }
             },
             2: {
-                title: "Tìm kiếm & Đánh giá Tài liệu Tham khảo Khoa học",
-                tag: "Bài tập 2",
+                title: "Tìm kiếm và đánh giá thông tin học thuật",
+                tag: "Bài 2 - Mục 2.4",
                 icon: "fa-sheet-plastic",
                 tabs: {
                     overview: `
@@ -1080,18 +1159,22 @@
                             <strong>Đề tài nghiên cứu lựa chọn:</strong> "Ứng dụng Trí tuệ nhân tạo (AI) trong dịch thuật văn học: Cơ hội, thách thức và sự thay đổi vai trò của dịch giả thế hệ mới."
                         </div>
                         
-                        <h4><i class="fa-solid fa-circle-check"></i> Phạm vi tìm kiếm tài liệu</h4>
-                        <p>Các tài liệu xuất bản từ giai đoạn 2020 - 2026 bằng cả tiếng Anh và tiếng Việt, tập trung vào dịch máy thần kinh (NMT), Generative AI và mô hình ngôn ngữ lớn (LLMs) ứng dụng trong nghệ thuật ngôn từ.</p>
+                        <h4><i class="fa-solid fa-magnifying-glass"></i> Các toán tử nâng cao sử dụng khi tìm kiếm dữ liệu thực tế</h4>
+                        <ul>
+                            <li><code>intitle:"literary translation" AND "machine translation"</code> (Tìm tài liệu tập trung cao vào dịch thuật văn học và dịch máy).</li>
+                            <li><code>"post-editing" AND "literary translation" AND "AI"</code> (Giới hạn tài liệu nghiên cứu về quá trình hiệu đính văn học có ứng dụng AI).</li>
+                            <li><code>filetype:pdf "generative AI" "literary" "cultural"</code> (Lọc các tệp nghiên cứu định dạng PDF về AI tạo sinh trong ngữ cảnh văn hóa văn nghệ thuật).</li>
+                        </ul>
                     `,
                     details: `
-                        <h4><i class="fa-solid fa-table"></i> Bảng tổng hợp & Đánh giá xếp hạng 11 nguồn tài liệu tham khảo</h4>
+                        <h4><i class="fa-solid fa-table"></i> Bảng tổng hợp & Đánh giá xếp hạng chi tiết 11 tài liệu tham khảo khoa học</h4>
                         <div style="overflow-x: auto;">
                             <table class="academic-table">
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Tên tài liệu / Nguồn</th>
-                                        <th>Phân loại</th>
+                                        <th>Tên tài liệu / Nguồn / NXB</th>
+                                        <th>Loại nguồn</th>
                                         <th>Phân tích Ưu điểm & Nhược điểm</th>
                                         <th>Xếp hạng</th>
                                     </tr>
@@ -1099,79 +1182,79 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td><strong>Bowker (2021)</strong><br>Translating Literary Prose with MT</td>
+                                        <td><strong>Bowker (2021)</strong><br>Translating Literary Prose with MT<br><em>Translation Spaces</em></td>
                                         <td>Bài báo khoa học</td>
-                                        <td><strong>Ưu điểm:</strong> Tác giả là GS đầu ngành; NXB John Benjamins uy tín; chỉ số trích dẫn cao (>120 lượt); nghiên cứu sâu sắc.<br><strong>Nhược điểm:</strong> Xuất bản 2021 nên chưa cập nhật làn sóng Generative AI mới nhất.</td>
+                                        <td><strong>Ưu điểm:</strong> Tác giả GS đầu ngành; NXB John Benjamins uy tín; chỉ số trích dẫn cao (>120 lượt); phương pháp tổng quan tài liệu chặt chẽ.<br><strong>Nhược điểm:</strong> Xuất bản 2021 nên chưa cập nhật làn sóng Generative AI mới nhất.</td>
                                         <td><span class="tier-badge tier-1">Rất cao (Tier 1)</span></td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td><strong>Hadley & Toral (2024)</strong><br>Evaluating Generative AI in Idioms</td>
+                                        <td><strong>Hadley & Toral (2024)</strong><br>Evaluating Generative AI in Idioms<br><em>Computational Linguistics Journal</em></td>
                                         <td>Bài báo khoa học</td>
-                                        <td><strong>Ưu điểm:</strong> Phương pháp định lượng rõ ràng (đo độ chính xác khi dịch ẩn dụ bằng AI); tính cập nhật cực tốt; tạp chí Scopus Q1 uy tín.</td>
+                                        <td><strong>Ưu điểm:</strong> Phương pháp định lượng thực nghiệm rõ ràng (đo độ chính xác khi dịch ẩn dụ bằng AI); tính cập nhật cực tốt (2024); thuộc danh mục Scopus Q1 uy tín.</td>
                                         <td><span class="tier-badge tier-1">Rất cao (Tier 1)</span></td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td><strong>Nguyễn Văn Hiệp (2023)</strong><br>Thách thức ứng dụng LLM trong văn học</td>
+                                        <td><strong>Nguyễn Văn Hiệp (2023)</strong><br>Thách thức ứng dụng LLM trong văn học<br><em>Tạp chí Ngôn ngữ và Đời sống</em></td>
                                         <td>Bài báo khoa học</td>
-                                        <td><strong>Ưu điểm:</strong> Tác giả là chuyên gia ngôn ngữ đầu ngành tại VN; đăng trên Tạp chí Ngôn ngữ & Đời sống chính thống; sát ngữ cảnh Việt Nam.<br><strong>Nhược điểm:</strong> Mẫu khảo sát định lượng thực nghiệm còn giới hạn.</td>
+                                        <td><strong>Ưu điểm:</strong> Tác giả là chuyên gia ngôn ngữ học đầu ngành tại VN; đăng trên tạp chí chính thống của Hội Ngôn ngữ học; phân tích rất sát thực tế tiếng Việt.<br><strong>Nhược điểm:</strong> Quy mô mẫu khảo sát định lượng thực nghiệm còn giới hạn.</td>
                                         <td><span class="tier-badge tier-1">Cao (Tier 1)</span></td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
-                                        <td><strong>Toral et al. (2020)</strong><br>Post-editing Effort of a Novel</td>
+                                        <td><strong>Toral et al. (2020)</strong><br>Post-editing Effort of a Novel<br><em>Frontiers in Digital Humanities</em></td>
                                         <td>Bài báo khoa học</td>
-                                        <td><strong>Ưu điểm:</strong> Nghiên cứu thực nghiệm (Case study) thực tế đo lường chính xác thời gian và công sức hiệu đính (Post-editing) của dịch giả.<br><strong>Nhược điểm:</strong> Công nghệ NMT năm 2020 đã có nhiều bước tiến mới hiện nay.</td>
+                                        <td><strong>Ưu điểm:</strong> Nghiên cứu thực nghiệm (Case study) thực tế đo lường chính xác thời gian và công sức hiệu đính (Post-editing) của dịch giả với NMT; số liệu tường minh, khách quan. <br><strong>Nhược điểm:</strong> Công nghệ NMT năm 2020 đã có nhiều bước tiến mới hiện nay.</td>
                                         <td><span class="tier-badge tier-1">Rất cao (Tier 1)</span></td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td><strong>Webster (2025)</strong><br>Human-AI Collaborative Model</td>
+                                        <td><strong>Webster (2025)</strong><br>Human-AI Collaborative Model<br><em>Int'l Journal of Translation Studies</em></td>
                                         <td>Bài báo khoa học</td>
                                         <td><strong>Ưu điểm:</strong> Tính cập nhật xuất sắc (2025); đưa ra mô hình lý thuyết mới đón đầu xu hướng phối hợp tối ưu giữa người và máy (Human-AI Collaboration).</td>
                                         <td><span class="tier-badge tier-1">Rất cao (Tier 1)</span></td>
                                     </tr>
                                     <tr>
                                         <td>6</td>
-                                        <td><strong>Nguyễn Thị Mai (2025)</strong><br>Nghiên cứu ứng dụng AI hỗ trợ sinh viên</td>
-                                        <td>CSDL luận văn trường</td>
-                                        <td><strong>Ưu điểm:</strong> Được thẩm định bởi Hội đồng khoa học nhà trường; khảo sát trực tiếp hành vi sinh viên dịch thuật chuyên ngành ngoại ngữ.<br><strong>Nhược điểm:</strong> Phạm vi mang tính nội bộ, ít lượt trích dẫn quốc tế.</td>
+                                        <td><strong>Nguyễn Thị Mai (2025)</strong><br>Nghiên cứu ứng dụng AI hỗ trợ sinh viên<br><em>CSDL Luận văn Thạc sĩ - Trường ĐHNN</em></td>
+                                        <td>CSDL thư viện</td>
+                                        <td><strong>Ưu điểm:</strong> Được thẩm định bởi Hội đồng khoa học nhà trường; khảo sát trực tiếp hành vi sinh viên dịch thuật chuyên ngành ngoại ngữ; số liệu thực tế.<br><strong>Nhược điểm:</strong> Phạm vi mang tính nội bộ, ít lượt trích dẫn quốc tế.</td>
                                         <td><span class="tier-badge tier-2">Cao (Tier 2)</span></td>
                                     </tr>
                                     <tr>
                                         <td>7</td>
-                                        <td><strong>Kenny (2022)</strong><br>Machine Translation for Everyone</td>
+                                        <td><strong>Kenny (2022)</strong><br>Machine Translation for Everyone<br><em>Routledge</em></td>
                                         <td>Sách chuyên khảo</td>
                                         <td><strong>Ưu điểm:</strong> NXB Routledge danh tiếng; sách được bình duyệt chéo nghiêm ngặt; lý thuyết sâu sắc, có tính hệ thống rất cao.<br><strong>Nhược điểm:</strong> Sách có độ trễ xuất bản, không cập nhật nhanh bằng báo số.</td>
                                         <td><span class="tier-badge tier-1">Rất cao (Tier 1)</span></td>
                                     </tr>
                                     <tr>
                                         <td>8</td>
-                                        <td><strong>Rojo & Ibarretxe (2024)</strong><br>Cognitive Linguistics & Translation</td>
+                                        <td><strong>Rojo & Ibarretxe (2024)</strong><br>Cognitive Linguistics & Translation<br><em>John Benjamins Publishing</em></td>
                                         <td>Sách chuyên khảo</td>
                                         <td><strong>Ưu điểm:</strong> Tiếp cận liên ngành độc đáo (Ngôn ngữ học tri nhận kết hợp dịch thuật số); tác giả uy tín quốc tế; phân tích chất lượng cao.</td>
                                         <td><span class="tier-badge tier-1">Rất cao (Tier 1)</span></td>
                                     </tr>
                                     <tr>
                                         <td>9</td>
-                                        <td><strong>Moorkens (2023)</strong><br>Ethics and Human-in-the-loop</td>
-                                        <td>Tạp chí chuyên ngành khác</td>
+                                        <td><strong>Moorkens (2023)</strong><br>Ethics and Human-in-the-loop<br><em>Journal of Specialized Translation</em></td>
+                                        <td>Tạp chí chuyên ngành</td>
                                         <td><strong>Ưu điểm:</strong> Đi sâu khía cạnh đạo đức, bản quyền và tính nhân văn khi AI dùng dữ liệu văn học; lập luận phản biện sắc bén và độc lập.</td>
                                         <td><span class="tier-badge tier-1">Cao (Tier 1)</span></td>
                                     </tr>
                                     <tr>
                                         <td>10</td>
-                                        <td><strong>Slator (2026)</strong><br>State of AI & Literary Translation</td>
+                                        <td><strong>Slator (2026)</strong><br>State of AI & Literary Translation<br><em>Slator Market Report</em></td>
                                         <td>Nguồn mở Internet</td>
                                         <td><strong>Ưu điểm:</strong> Tính cập nhật tối đa (2026); cung cấp số liệu thực tế về thị trường, doanh thu và xu hướng dịch giả số toàn cầu.<br><strong>Nhược điểm:</strong> Báo cáo mang tính thương mại kinh tế, không chuyên sâu học thuật.</td>
                                         <td><span class="tier-badge tier-2">Trung bình - Cao (Tier 2)</span></td>
                                     </tr>
                                     <tr>
                                         <td>11</td>
-                                        <td><strong>UNESCO (2024)</strong><br>AI & Cultural Diversity in Lit</td>
+                                        <td><strong>UNESCO (2024)</strong><br>AI & Future of Cultural Diversity<br><em>UNESCO Digital Library</em></td>
                                         <td>Nguồn mở Internet</td>
-                                        <td><strong>Ưu điểm:</strong> Tổ chức quốc tế uy tín phát hành; cung cấp tầm nhìn vĩ mô về bảo tồn đa dạng văn hóa nghệ thuật trước làn sóng AI.<br><strong>Nhược điểm:</strong> Mang tính chất định hướng chính sách chung, ít giải pháp kỹ thuật cụ thể.</td>
+                                        <td><strong>Ưu điểm:</strong> Tổ chức quốc tế uy tín phát hành; cung cấp tầm nhìn vĩ mô về bảo tồn đa dạng văn hóa nghệ thuật trước làn sóng AI.<br><strong>Nhược điểm:</strong> Mang tính chất định hướng chính sách chung, ít giải pháp cụ thể.</td>
                                         <td><span class="tier-badge tier-2">Cao (Tier 2)</span></td>
                                     </tr>
                                 </tbody>
@@ -1186,32 +1269,32 @@
                 }
             },
             3: {
-                title: "Nghệ Thuật Viết Prompt Học Tập hiệu quả theo C.R.E.A.T.E",
-                tag: "Bài tập 3",
+                title: "Viết Prompt hiệu quả cho các tác vụ học tập",
+                tag: "Bài 3 - Mục 3.4",
                 icon: "fa-keyboard",
                 tabs: {
                     overview: `
                         <h4><i class="fa-solid fa-compass"></i> Mục tiêu bài học</h4>
-                        <p>Làm chủ kỹ thuật thiết kế câu lệnh có cấu trúc (Prompt Engineering) để tương tác, khai phóng sức mạnh của mô hình ngôn ngữ lớn (LLM), ứng dụng hiệu quả vào các tác vụ tóm tắt học thuật, giải thích khái niệm sâu sắc và thiết kế khảo thí.</p>
+                        <p>Trình bày sự so sánh rõ nét giữa Prompt ban đầu và Prompt cải tiến để thấy kết quả đầu ra khác biệt rõ rệt thế nào, qua đó làm chủ kỹ thuật thiết kế câu lệnh học tập.</p>
                         
                         <div class="highlight-box">
-                            <h4><i class="fa-solid fa-gears"></i> Khung kỹ nghệ câu lệnh C.R.E.A.T.E độc quyền</h4>
+                            <h4><i class="fa-solid fa-gears"></i> Khung câu lệnh tối ưu C.R.E.A.T.E</h4>
                             <ul>
-                                <li><strong>C - Context (Bối cảnh):</strong> Cung cấp rõ ràng mục đích học tập và trình độ hiện tại của bản thân.</li>
-                                <li><strong>R - Role (Vai trò):</strong> Chỉ định danh phận chuyên gia (Giáo sư đầu ngành, Trợ lý nghiên cứu...).</li>
-                                <li><strong>E - Explicit Instructions (Lệnh rõ ràng):</strong> Dùng động từ hành động mạnh, chia nhỏ quy trình xử lý từng bước.</li>
-                                <li><strong>A - Academic Framework (Khung học thuật):</strong> Lồng ghép phương pháp khoa học (Thang đo Bloom, Feynman...).</li>
-                                <li><strong>T - Target Output (Định dạng đầu ra):</strong> Quy định cụ thể hình thức hiển thị (Bảng biểu, Bullet points...).</li>
-                                <li><strong>E - Examples (Ví dụ minh họa):</strong> Cung cấp ít nhất một ví dụ mẫu (Few-shot) để AI bắt chước ngữ điệu.</li>
+                                <li><strong>C - Context:</strong> Cung cấp rõ ràng mục đích học tập và trình độ hiện tại.</li>
+                                <li><strong>R - Role:</strong> Chỉ định danh phận chuyên gia (Giáo sư, Trợ lý nghiên cứu).</li>
+                                <li><strong>E - Explicit Instructions:</strong> Lệnh hành động mạnh, chia nhỏ quy trình từng bước.</li>
+                                <li><strong>A - Academic Framework:</strong> Lồng ghép khung khoa học (Thang Bloom, Feynman).</li>
+                                <li><strong>T - Target Output:</strong> Định dạng hiển thị cụ thể (Bảng biểu, Bullet points).</li>
+                                <li><strong>E - Examples:</strong> Cung cấp ví dụ mẫu (Few-shot) để AI định hình ngữ điệu.</li>
                             </ul>
                         </div>
                     `,
                     details: `
-                        <h4><i class="fa-solid fa-flask"></i> Nhật ký thực nghiệm 3 tác vụ học tập</h4>
+                        <h4><i class="fa-solid fa-flask"></i> Nhật ký so sánh chi tiết 3 tác vụ học thuật thực nghiệm</h4>
                         <div class="task-switcher">
-                            <button class="task-btn active" onclick="switchTask(1, this)">Tác vụ 1: Tóm tắt học thuật</button>
-                            <button class="task-btn" onclick="switchTask(2, this)">Tác vụ 2: Giải thích Feynman</button>
-                            <button class="task-btn" onclick="switchTask(3, this)">Tác vụ 3: Thiết kế câu hỏi Bloom</button>
+                            <button class="task-btn active" onclick="switchTask(1, this)">Tác vụ 1: Tóm tắt văn bản</button>
+                            <button class="task-btn" onclick="switchTask(2, this)">Tác vụ 2: Giải thích LLM</button>
+                            <button class="task-btn" onclick="switchTask(3, this)">Tác vụ 3: Tạo câu hỏi ôn tập</button>
                         </div>
                         
                         <!-- Task Content 1 -->
@@ -1219,15 +1302,24 @@
                             <p><strong>Nội dung tóm tắt:</strong> Văn bản học thuật về tác động của AI đối với thị trường lao động (WEF 2030).</p>
                             <div class="prompt-compare-box">
                                 <div class="compare-header" style="color: #64748b;">Prompt A (Cơ bản)</div>
-                                <div class="compare-body">"Hãy tóm tắt văn bản sau đây cho tôi." -> <em>Kết quả: AI phản hồi một đoạn dài dòng, cắt ghép cơ học khoảng 3 câu từ bài gốc, thiếu phân cấp.</em></div>
+                                <div class="compare-body">
+                                    <strong>Nội dung câu lệnh:</strong> "Hãy tóm tắt văn bản sau đây cho tôi."<br>
+                                    <strong>Kết quả AI trả về:</strong> Trả về một đoạn văn dài dòng, thực chất là cắt ghép cơ học khoảng 3 câu từ bài gốc, không có phân cấp thông tin rõ ràng.
+                                </div>
                             </div>
                             <div class="prompt-compare-box">
                                 <div class="compare-header" style="color: #0284c7;">Prompt B (Cải tiến)</div>
-                                <div class="compare-body">"Hãy tóm tắt văn bản dưới đây thành 5 dòng ngắn gọn, tập trung vào luận điểm chính và số liệu." -> <em>Kết quả: Cấu trúc gọn hơn, nhưng việc ép buộc "đúng 5 dòng" làm AI vô tình cắt bỏ phần phân tích khoảng trống kỹ năng quan trọng ở cuối.</em></div>
+                                <div class="compare-body">
+                                    <strong>Nội dung câu lệnh:</strong> "Hãy tóm tắt văn bản dưới đây thành 5 dòng ngắn gọn, tập trung vào luận điểm chính và số liệu."<br>
+                                    <strong>Kết quả AI trả về:</strong> Cấu trúc gọn hơn bằng danh sách gạch đầu dòng, nhưng việc ép buộc "đúng 5 dòng" khiến AI vô tình cắt bỏ mất phần phân tích về khoảng trống kỹ năng cực kỳ quan trọng ở cuối bài.
+                                </div>
                             </div>
                             <div class="prompt-compare-box" style="border-color: var(--primary-yellow);">
                                 <div class="compare-header" style="background-color: var(--light-yellow); color: var(--dark-yellow);">Prompt C (Nâng cao)</div>
-                                <div class="compare-body">"Bạn là một trợ lý nghiên cứu học thuật xuất sắc. Hãy đọc văn bản và thực hiện tóm tắt theo quy trình từng bước: Bước 1: Trích xuất mục đích cốt lõi (1 câu). Bước 2: Liệt kê 3 luận điểm quan trọng kèm số liệu dạng gạch đầu dòng. Bước 3: Đưa ra kết luận của tác giả." -> <em>Kết quả: Xuất sắc. Đầu ra phân cấp rực rỡ, bảo toàn thông điệp cốt lõi và số liệu chính xác (23%, 85 triệu, 97 triệu).</em></div>
+                                <div class="compare-body">
+                                    <strong>Nội dung câu lệnh:</strong> "Bạn là một trợ lý nghiên cứu học thuật xuất sắc. Hãy đọc văn bản và thực hiện tóm tắt theo quy trình từng bước: Bước 1: Trích xuất mục đích cốt lõi (1 câu). Bước 2: Liệt kê 3 luận điểm quan trọng nhất kèm số liệu dạng gạch đầu dòng. Bước 3: Đưa ra kết luận cuối cùng của tác giả."<br>
+                                    <strong>Kết quả AI trả về:</strong> Xuất sắc. Đầu ra phân tách rõ ràng làm 3 phần độc lập. Trích xuất chính xác con số 23% thay đổi việc làm, 85 triệu việc bị thay thế, 97 triệu việc mới và nhấn mạnh thông điệp cuối về "khoảng trống kỹ năng".
+                                </div>
                             </div>
                         </div>
                         
@@ -1236,24 +1328,36 @@
                             <p><strong>Khái niệm cần giải thích:</strong> "Mô hình ngôn ngữ lớn (LLM)".</p>
                             <div class="prompt-compare-box">
                                 <div class="compare-header" style="color: #64748b;">Prompt A (Cơ bản)</div>
-                                <div class="compare-body">"Mô hình ngôn ngữ lớn (LLM) đề cập trong văn bản là gì?" -> <em>Kết quả: AI đưa ra định nghĩa phần cứng đậm tính kỹ thuật (Deep learning, nơ-ron Transformer...), cực kỳ khó hiểu đối với dân chuyên ngành ngôn ngữ.</em></div>
+                                <div class="compare-body">
+                                    <strong>Nội dung câu lệnh:</strong> "Mô hình ngôn ngữ lớn (LLM) đề cập trong văn bản là gì?"<br>
+                                    <strong>Kết quả AI trả về:</strong> Trả về định nghĩa đậm tính kỹ thuật phần cứng: "Là thuật toán deep learning, sử dụng mạng nơ-ron Transformer với hàng tỷ tham số..." - rất khó hiểu cho sinh viên ngôn ngữ không chuyên CNTT.
+                                </div>
                             </div>
                             <div class="prompt-compare-box" style="border-color: var(--primary-yellow);">
                                 <div class="compare-header" style="background-color: var(--light-yellow); color: var(--dark-yellow);">Prompt C (Nâng cao - Kỹ thuật Feynman)</div>
-                                <div class="compare-body">"Bạn là một giáo sư nổi tiếng với phương pháp giảng dạy đơn giản hóa Feynman. Hãy giải thích khái niệm LLM bằng cách sử dụng một hình ảnh ẩn dụ thực tế (ví dụ thư viện hoặc đứa trẻ học nói). Định dạng đầu ra: Định nghĩa đơn giản -> Hình ảnh ẩn dụ -> Ví dụ thực tế." -> <em>Kết quả: Tuyệt vời. AI ví LLM như "một người đọc vĩ đại đã đọc hết sách trên thế giới, ghi nhớ tần suất xuất hiện của từ ngữ để dự đoán từ tiếp theo". Cách tiếp cận này tạo liên kết tư duy tức thì cho người học.</em></div>
+                                <div class="compare-body">
+                                    <strong>Nội dung câu lệnh:</strong> "Bạn là một giáo sư nổi tiếng với phương pháp giảng dạy đơn giản hóa Feynman. Hãy giải thích khái niệm LLM bằng cách sử dụng một hình ảnh ẩn dụ thực tế (ví dụ thư viện hoặc đứa trẻ học nói). Định dạng đầu ra: Định nghĩa đơn giản -> Hình ảnh ẩn dụ -> Ví dụ thực tế."<br>
+                                    <strong>Kết quả AI trả về:</strong> Tuyệt vời. AI ví LLM như "một người đọc vĩ đại đã đọc hết sách trên thế giới, ghi nhớ tần suất xuất hiện của từ ngữ để dự đoán từ tiếp theo". Cách tiếp cận ẩn dụ sinh động này tạo ra sự kết nối tư duy ngay lập tức cho người học.
+                                </div>
                             </div>
                         </div>
                         
                         <!-- Task Content 3 -->
                         <div id="task-panel-3" class="task-panel" style="display:none;">
-                            <p><strong>Yêu cầu:</strong> Thiết kế bộ câu hỏi tự ôn tập để chuẩn bị thi cử dựa trên văn bản.</p>
+                            <p><strong>Yêu cầu:</strong> Thiết kế bộ câu hỏi tự ôn tập để kiểm tra kiến thức bản thân.</p>
                             <div class="prompt-compare-box">
                                 <div class="compare-header" style="color: #64748b;">Prompt A (Cơ bản)</div>
-                                <div class="compare-body">"Hãy tạo cho tôi 3 câu hỏi ôn tập dựa trên văn bản." -> <em>Kết quả: Tạo ra câu hỏi quá nông và hiển nhiên ("AI viết tắt của từ gì?"), hoàn toàn không có giá trị ôn luyện sâu.</em></div>
+                                <div class="compare-body">
+                                    <strong>Nội dung câu lệnh:</strong> "Hãy tạo cho tôi 3 câu hỏi ôn tập dựa trên văn bản."<br>
+                                    <strong>Kết quả AI trả về:</strong> Tạo ra các câu hỏi quá nông và hiển nhiên như "AI viết tắt của từ gì?" hay "Văn bản nói về chủ đề gì?", hoàn toàn không có giá trị ôn luyện sâu sắc.
+                                </div>
                             </div>
                             <div class="prompt-compare-box" style="border-color: var(--primary-yellow);">
                                 <div class="compare-header" style="background-color: var(--light-yellow); color: var(--dark-yellow);">Prompt C (Nâng cao - Thang đo nhận thức Bloom)</div>
-                                <div class="compare-body">"Bạn là một chuyên gia khảo thí giáo dục. Hãy thiết kế bộ 3 câu hỏi phân tách rõ ràng theo Thang đo nhận thức Bloom dựa trên văn bản: Câu 1 (Nhận biết): Trắc nghiệm số liệu; Câu 2 (Phân tích): Tự luận so sánh hai mặt lợi/hại; Câu 3 (Vận dụng cao): Tình huống giả định áp dụng thực tế. Cung cấp gợi ý hướng tư duy cho mỗi câu." -> <em>Kết quả: Một bộ đề ôn tập toàn diện có chiều sâu học thuật, giúp người học vừa nhớ số liệu máy móc, vừa tự liên hệ bản thân cần trang bị kỹ năng gì để không bị thay thế.</em></div>
+                                <div class="compare-body">
+                                    <strong>Nội dung câu lệnh:</strong> "Bạn là một chuyên gia khảo thí giáo dục. Hãy thiết kế bộ 3 câu hỏi phân tách rõ ràng theo Thang đo nhận thức Bloom dựa trên văn bản trên: Câu 1 (Cấp độ Nhận biết): Trắc nghiệm số liệu; Câu 2 (Cấp độ Phân tích): Tự luận so sánh hai mặt lợi/hại; Câu 3 (Cấp độ Vận dụng cao): Tình huống giả định áp dụng thực tế. Cung cấp thêm phần Gợi ý hướng tư duy cho mỗi câu."<br>
+                                    <strong>Kết quả AI trả về:</strong> Tạo ra một bộ đề ôn tập toàn diện có chiều sâu học thuật. Đặc biệt câu hỏi vận dụng cao bắt buộc người học phải tự liên hệ bản thân cần trang bị kỹ năng gì để không bị thay thế, đi kèm gợi ý chấm điểm chặt chẽ.
+                                </div>
                             </div>
                         </div>
                     `,
@@ -1265,77 +1369,101 @@
                 }
             },
             4: {
-                title: "Quản Lý Dự Án Số & Đồng Hành Cộng Tác Nhóm",
-                tag: "Bài tập 4",
+                title: "Sử dụng công cụ cộng tác trực tuyến cho dự án nhóm",
+                tag: "Bài 4 - Mục 4.4",
                 icon: "fa-users-viewfinder",
                 tabs: {
                     overview: `
                         <h4><i class="fa-solid fa-compass"></i> Mục tiêu bài học</h4>
-                        <p>Nâng cao năng lực quản lý tác vụ số, rèn luyện kỹ năng phân bổ nhân sự, theo dõi dự án thời gian thực và xây dựng chuẩn mực giao tiếp đồng bộ để tối ưu hiệu suất làm việc nhóm trong không gian ảo.</p>
+                        <p>Minh chứng sinh động về quá trình sử dụng các công cụ quản lý dự án nhóm và cách thức phối hợp trực tuyến của cá nhân trong dự án chung.</p>
                         
                         <div class="highlight-box">
                             <strong>Đề tài dự án nhóm thực hiện:</strong> "Ứng dụng của AI trong việc học ngoại ngữ và giảng dạy ngoại ngữ"
                         </div>
                         
-                        <h4><i class="fa-solid fa-circle-check"></i> Các trụ cột công nghệ nhóm mình đã tích hợp</h4>
-                        <ul>
-                            <li><strong>Quản lý tiến độ:</strong> Trello (Thiết lập Kanban Board & Quy tắc tự động hóa).</li>
-                            <li><strong>Giao tiếp đồng bộ:</strong> Google Meet (Tương tác trực tiếp) & Zalo (Thông báo tức thì).</li>
-                            <li><strong>Đồng soạn thảo:</strong> Google Docs (Suggesting Mode, phân cấp cấu trúc).</li>
-                            <li><strong>Lưu trữ tài nguyên:</strong> Google Drive (Phân mục, đặt tên tệp chuẩn).</li>
-                        </ul>
+                        <h4><i class="fa-solid fa-network-wired"></i> Sơ đồ quy trình làm việc nhóm trực tuyến đồng bộ</h4>
+                        <div class="collaboration-flow">
+                            <div class="flow-step">
+                                <i class="fa-solid fa-rectangle-list"></i>
+                                <h5>1. Trello</h5>
+                                <p>Phân việc, gắn tag mức độ gấp và theo dõi hạn chót</p>
+                            </div>
+                            <div class="flow-step">
+                                <i class="fa-solid fa-video"></i>
+                                <h5>2. Meet/Zalo</h5>
+                                <p>Tương tác định kỳ và thông báo tức thì</p>
+                            </div>
+                            <div class="flow-step">
+                                <i class="fa-solid fa-file-signature"></i>
+                                <h5>3. Docs</h5>
+                                <p>Đồng soạn thảo báo cáo chế độ Suggesting</p>
+                            </div>
+                            <div class="flow-step">
+                                <i class="fa-solid fa-hard-drive"></i>
+                                <h5>4. Drive</h5>
+                                <p>Số hóa thư mục lưu trữ, chuẩn hóa tên file</p>
+                            </div>
+                        </div>
                     `,
                     details: `
-                        <h4><i class="fa-solid fa-gears"></i> Chi tiết quy trình xử lý 4 công cụ của Hà My</h4>
+                        <h4><i class="fa-solid fa-gears"></i> Diễn ra chi tiết quá trình phối hợp của Hà My</h4>
                         <ul>
-                            <li><strong>1. Trello (Quản lý dự án):</strong> Mình trực tiếp tham gia thiết lập không gian Trello chung. Chủ động tạo các hệ thống Tag/Label phân loại mức độ ưu tiên (Gấp, Cần làm, Đang làm). Thiết lập tính năng tự động (Automation - Create a Rule): Khi mình tích hoàn thành (Checked), thẻ công việc tự động nhảy về cột "Đã xong" (Done). Mọi tác vụ mình phụ trách đều ghi chú checklist và cài đặt Deadline nghiêm túc, duy trì cập nhật ít nhất 3 lần/tuần.</li>
-                            <li><strong>2. Zalo & Google Meet (Giao tiếp nhóm):</strong> Duy trì tần suất tương tác cực kỳ cao (trung bình >10 lượt tương tác thảo luận đóng góp ý kiến mang tính xây dựng mỗi tuần). Không chỉ tập trung phần việc cá nhân, mình liên tục theo dõi các kênh chung để chủ động trợ giúp, chia sẻ tài liệu hữu ích cho đồng đội.</li>
-                            <li><strong>3. Google Docs (Đồng soạn thảo):</strong> Đề xuất áp dụng quy tắc làm việc mới: Chuyển từ chế độ chỉnh sửa trực tiếp (Editing) sang chế độ đề xuất (Suggesting Mode) và tận dụng triệt để tính năng Bình luận (Comment) để cả nhóm thảo luận thống nhất trước khi thay đổi văn bản, tránh xung đột lỗi font và xáo trộn bố cục.</li>
-                            <li><strong>4. Google Drive (Lưu trữ khoa học):</strong> Xây dựng cấu trúc thư mục nhóm nhiều cấp logic: Thư mục tổng -> Thư mục thành viên <code>Nguyễn Hồng Hà My</code>... 100% tệp tin do mình tải lên tuân thủ nghiêm ngặt quy chuẩn đặt tên thống nhất của nhóm để tránh thất lạc tài liệu.</li>
+                            <li><strong>1. Trello (Quản lý dự án):</strong> Mình chủ động tạo ra các hệ thống Tag/Label phân loại theo mức độ ưu tiên (Gấp, Cần làm, Đang làm). Thiết lập tính năng tự động (Automation): khi tích hoàn thành, thẻ công việc sẽ tự động chuyển về cột "Đã xong" (Done). 100% các tác vụ mình phụ trách đều ghi chú checklist và cài đặt Deadline nghiêm túc. Tần suất cập nhật ít nhất 3 lần/tuần.</li>
+                            <li><strong>2. Zalo & Google Meet (Tương tác nhóm):</strong> Duy trì thảo luận, đóng góp ý kiến mang tính xây dựng hằng ngày với tần suất tương tác cao, trung bình trên 10 lượt tương tác/tuần. Luôn theo dõi các kênh chung để chủ động chia sẻ tài liệu hữu ích và hỗ trợ đồng đội.</li>
+                            <li><strong>3. Google Docs (Đồng soạn thảo):</strong> Đề xuất nhóm áp dụng nguyên tắc làm việc mới: Chuyển hoàn toàn từ chế độ chỉnh sửa trực tiếp (Editing) sang chế độ đề xuất (Suggesting) và tận dụng triệt để tính năng Bình luận (Comment) để thảo luận, thống nhất trước khi sửa tệp chung, bảo đảm cấu trúc tài liệu không bị xáo trộn.</li>
+                            <li><strong>4. Google Drive (Lưu trữ và chia sẻ):</strong> Thiết lập hệ thống thư mục logic nhiều cấp (Thư mục chung nhóm -> Thư mục thành viên <code>Nguyễn Hồng Hà My</code>...). 100% các tệp tin tải lên đều tuân thủ nghiêm ngặt quy tắc đặt tên thống nhất của nhóm (ví dụ: <code>Nhom32_NguyenHongHaMy_BaoCaoCaNhan_V1.pdf</code>).</li>
                         </ul>
                         
-                        <h4 style="margin-top:20px;"><i class="fa-solid fa-triangle-exclamation"></i> Thách thức & Giải pháp xử lý</h4>
-                        <p><strong>Thách thức 1:</strong> Tin nhắn Zalo trôi nhanh khiến bỏ lỡ deadline -> <em>Giải pháp:</em> Thực hiện khung giờ phản hồi cố định hằng ngày, ghim tin nhắn, xem note và sử dụng bình chọn (Poll).</p>
-                        <p><strong>Thách thức 2:</strong> Thành viên quên cập nhật Trello -> <em>Giải pháp:</em> Chia sẻ và cài đặt mẫu tự động hóa Trello để đồng bộ hành vi kéo thẻ khi xong việc.</p>
-                        <p><strong>Thách thức 3:</strong> Xung đột font chữ trên Docs -> <em>Giải pháp:</em> Quy định đồng bộ font Arial/Times New Roman từ đầu và kiểm soát chặt qua chế độ Suggesting.</p>
+                        <h4 style="margin-top:20px;"><i class="fa-solid fa-triangle-exclamation"></i> Thách thức & Giải pháp xử lý cụ thể</h4>
+                        <p><strong>Thách thức 1 (Trôi thông tin giao tiếp trên Zalo):</strong> Do Zalo là nền tảng chat hỗn hợp, các thông báo dễ trôi đi. -> <em>Giải pháp:</em> Thực hiện nghiêm túc quy định của nhóm trưởng về "khung giờ phản hồi cố định" trong ngày; chủ động ghim tin nhắn quan trọng, tạo Note và bình chọn (Poll).</p>
+                        <p><strong>Thách thức 2 (Thành viên quên cập nhật Trello):</strong> Dẫn đến nhóm trưởng khó nắm tiến độ chung. -> <em>Giải pháp:</em> Sử dụng hệ thống Tag/Label tự động hóa kéo thẻ giúp mọi thành viên dễ quan sát trực quan.</p>
+                        <p><strong>Thách thức 3 (Xung đột định dạng khi soạn Docs):</strong> Nhiều người cùng sửa một file dễ làm lệch font chữ. -> <em>Giải pháp:</em> Thống nhất áp dụng chế độ "Suggesting" và bình luận tích cực.</p>
                     `,
                     lessons: `
                         <h4><i class="fa-solid fa-graduation-cap"></i> Bài học kinh nghiệm</h4>
-                        <p>Làm việc nhóm số thành công không nằm ở việc công cụ xịn thế nào, mà nằm ở tính kỷ luật và sự cam kết minh bạch của mỗi cá nhân. Việc làm chủ không gian làm việc số và quản trị thời gian tốt giúp mình định hình phong thái làm việc chuyên nghiệp trong tương lai.</p>
+                        <p>Cộng tác số không chỉ đơn thuần là việc sử dụng công cụ, mà quan trọng hơn là việc xây dựng thói quen và thống nhất được văn hóa làm việc minh bạch, tôn trọng ý kiến đề xuất của nhau giữa các thành viên.</p>
                     `
                 }
             },
             5: {
-                title: "Ứng Dụng AI Tạo Sinh Hỗ Trợ Sáng Tạo Nội Dung Truyền Thông",
-                tag: "Bài tập 5",
+                title: "Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung",
+                tag: "Bài 5 - Mục 5.4",
                 icon: "fa-paintbrush",
                 tabs: {
                     overview: `
                         <h4><i class="fa-solid fa-compass"></i> Mục tiêu bài học</h4>
-                        <p>Ứng dụng AI tạo chữ và tạo hình ảnh hỗ trợ đắc lực cho quy trình thiết kế nội dung truyền thông giáo dục, kết hợp chất xám và kỹ thuật thiết kế đồ họa của cá nhân để tạo ra sản phẩm hoàn hảo mang giá trị học thuật cao.</p>
+                        <p>Trình bày sản phẩm nội dung số hoàn thiện (bài viết và Infographic) được hỗ trợ thiết kế bởi các công cụ AI tạo sinh, so sánh hiệu quả và phân tích sâu quá trình chỉnh sửa cá nhân.</p>
                         
                         <div class="highlight-box">
-                            <strong>Chiến dịch thực hiện:</strong> Sáng tạo Infographic & Bài viết chuyên sâu: "Giải mã Phép biện chứng duy vật qua lăng kính đời sống hiện đại".
+                            <strong>Chiến dịch sáng tạo:</strong> Infographic & Bài viết chuyên sâu: "Giải mã Phép biện chứng duy vật qua lăng kính đời sống hiện đại".
                         </div>
+                        
+                        <h4><i class="fa-solid fa-user-pen"></i> Tỷ lệ đóng góp chất xám cá nhân thực tế</h4>
+                        <ul>
+                            <li><strong>Phần nội dung bài viết:</strong> Đóng góp 55% chất xám cá nhân (chỉ giữ lại 45% khung sườn gốc của AI).</li>
+                            <li><strong>Phần thiết kế Infographic:</strong> Đóng góp 70% chất xám cá nhân (phá bỏ hoàn toàn khung text mặc định của Canva AI).</li>
+                        </ul>
                     `,
                     details: `
-                        <h4><i class="fa-solid fa-clapperboard"></i> 3 Giai đoạn sáng tạo và % Đóng góp cá nhân</h4>
+                        <h4><i class="fa-solid fa-clapperboard"></i> Quá trình phối hợp sáng tạo chi tiết gấp đôi</h4>
                         
-                        <h5>Giai đoạn 1: Lên dàn ý với Google Gemini & ChatGPT (Đóng góp cá nhân: 55%)</h5>
-                        <p>Sử dụng Prompt yêu cầu làm một Content Creator phân tích Quy luật Lượng - Chất (áp dụng vào việc rèn luyện của Gen Z) và Bản chất - Hiện tượng (áp dụng vào văn hóa sống ảo mạng xã hội). Dàn ý 3 phần rõ ràng.</p>
-                        <p><em>Kết quả đối chiếu:</em> Gemini viết văn tự nhiên nhưng cấu trúc lỏng lẻo. ChatGPT cấu trúc chặt chẽ nhưng ví dụ rập khuôn. Mình đã bác bỏ hoàn toàn các ví dụ chung chung của AI để tự viết câu chuyện thực tế: Tích lũy học 10 từ vựng mỗi ngày để đạt IELTS 7.5 (Lượng - Chất) và Hiện tượng "sống ảo" trên Instagram so với áp lực đồng lứa ngoài thực tế (Bản chất - Hiện tượng), đảm bảo học thuật chính xác từ giáo trình.</p>
+                        <h5>1. Quá trình tạo dựng nội dung Triết học (Gemini & ChatGPT)</h5>
+                        <p><strong>Prompt sử dụng:</strong> "Bạn là một chuyên gia Triết học đồng thời là một Content Creator xuất sắc. Hãy xây dựng một dàn ý chi tiết cho bài viết 'Giải mã Phép biện chứng duy vật qua lăng kính đời sống hiện đại'. Yêu cầu: Không dùng ngôn từ học thuật khô khan, hãy liên hệ Quy luật Lượng - Chất với việc phát triển kỹ năng của Gen Z hiện nay và cặp phạm trù Bản chất - Hiện tượng với văn hóa mạng xã hội. Dàn ý gồm 3 phần rõ ràng."</p>
+                        <p><em>Kết quả so sánh:</em> Google Gemini đưa ra các ví dụ thực tế rất cập nhật về xu hướng của giới trẻ, hành văn tự nhiên nhưng cấu trúc logic triết học đôi chỗ bị lỏng lẻo. ChatGPT cấu trúc cực kỳ chặt chẽ, tuy nhiên ví dụ thực tế còn mang tính công thức, chưa đột phá về mặt ngôn từ.</p>
+                        <p><em>Chỉnh sửa cá nhân (Đóng góp 55%):</em> Mình chỉ giữ 45% khung sườn lõi. Tự viết lại toàn bộ nội dung chi tiết dựa trên trải nghiệm thực tế: Bác bỏ ví dụ chung chung của AI để thay bằng câu chuyện thực tế "Tích lũy từ việc học 10 từ vựng mỗi ngày để đạt IELTS 7.5" (Quy luật Lượng - Chất) và Hiện tượng "sống ảo" trên Instagram so với áp lực đồng lứa ngoài đời thực (Bản chất - Hiện tượng).</p>
                         
-                        <h5 style="margin-top:15px;">Giai đoạn 2: Tạo ảnh minh họa quy luật Lượng - Chất với Google Gemini</h5>
-                        <p>Mình tiến hành thử nghiệm song song 2 trường phái viết Prompt trên Gemini:</p>
+                        <h5 style="margin-top:15px;">2. Quá trình tạo hình ảnh minh họa bằng Google Gemini</h5>
+                        <p>Thực nghiệm với 2 kiểu cấu trúc Prompt khác nhau:</p>
                         <ul>
-                            <li><strong>Kiểu 1 (Nghệ thuật tự do - Creative-focused):</strong> "Hãy vẽ một bức tranh tối giản đầy tính triết lý về quy luật Lượng - Chất. Một người đang kiên trì bước lên những bậc thang được làm từ những cuốn sách dày đang phát sáng. Ở bậc thang trên cùng, khi chạm tới đỉnh, người đó hóa thân thành một loài chim phượng hoàng rực lửa bay vút lên bầu trời." -> <em>Kết quả:</em> Đẹp huyền ảo nhưng bố cục lộn xộn, không thể hiện rõ sự tuần tự tích lũy về lượng.</li>
-                            <li><strong>Kiểu 2 (Thông số kỹ thuật - Technical-focused):</strong> "A minimalist infographic vector style illustration, flat design. A straight staircase made of 5 thick books stacked on top of each other increasing in size. A clear human silhouette character is climbing up step by step... --ar 16:9" -> <em>Kết quả:</em> Đường nét sắc sảo, bậc thang xếp thẳng hàng đại diện trực quan rất tốt cho các giai đoạn của "Độ", nhân vật rõ ràng không lem màu.</li>
+                            <li><strong>Kiểu Prompt 1 (Phong cách tự do):</strong> "Hãy vẽ một bức tranh tối giản đầy tính triết lý về quy luật Lượng - Chất. Một người đang kiên trì bước lên những bậc thang được làm từ những cuốn sách dày đang phát sáng. Ở bậc thang trên cùng, khi chạm tới đỉnh, người đó hóa thân thành một loài chim phượng hoàng rực lửa bay vút lên bầu trời." -> <em>Kết quả:</em> Tính nghệ thuật cao, màu sắc huyền ảo nhưng bố cục lộn xộn, không thể hiện rõ tính tuần tự "tích lũy lượng dẫn đến nhảy vọt chất".</li>
+                            <li><strong>Kiểu Prompt 2 (Quy định thông số & bố cục chặt chẽ):</strong> "A minimalist infographic vector style illustration, flat design. A straight staircase made of 5 thick books stacked on top of each other increasing in size. A clear human silhouette character is climbing up step by step. On the final step, a smooth transition effect showing the character transforming into a soaring neon eagle. Clean white background, 2D graphic, isometric perspective, high contrast, non-photorealistic --ar 16:9" -> <em>Kết quả:</em> Đường nét sắc sảo, bố cục dứt khoát mang tính chất infographic đồ họa chuyên nghiệp. Bậc thang sách xếp thẳng hàng đại diện trực quan rất tốt cho giai đoạn của "Độ".</li>
                         </ul>
-                        <p><em>Tích hợp sáng tạo của Hà My:</em> Chọn phôi Kiểu 2. Mình đưa ảnh vào phần mềm để cắt bỏ chi tiết thừa lem màu. Sau đó, tự thiết kế và chèn nhãn văn bản (Text Label) chuẩn xác đè lên các bậc thang sách: Bậc 1, 2, 3 ghi "Tích lũy về Lượng"; Bậc 4 ghi "Điểm nút"; vị trí đại bàng bay lên ghi "BƯỚC NHẢY SANG CHẤT MỚI" để biến bức ảnh thô thành sơ đồ tư duy có giá trị.</p>
+                        <p><em>Chỉnh sửa cá nhân:</em> Chọn phôi Kiểu Prompt 2. Đưa ảnh vào phần mềm để cắt bỏ chi tiết thừa lem màu ở nền trắng và chữ trên gáy sách bị lỗi font. Tự tay thiết kế và chèn các nhãn văn bản (Text Label) chính xác đè lên các bậc thang: Bậc 1, 2, 3 ghi "Tích lũy về Lượng"; Bậc 4 ghi "Điểm nút"; vị trí đại bàng bay lên tạo hiệu ứng chữ nổi bật "BƯỚC NHẢY SANG CHẤT MỚI" để nâng cao giá trị học thuật.</p>
                         
-                        <h5 style="margin-top:15px;">Giai đoạn 3: Thiết kế Layout dọc trên Canva AI (Đóng góp cá nhân: 70%)</h5>
-                        <p>Dùng tính năng Canva Magic Design thiết kế layout dọc với tone màu xanh dương - trắng neon tối giản. Canva gợi ý bố cục cân đối nhưng nội dung tiếng Anh rập khuôn và khoảng cách các phần quá khít.</p>
-                        <p><em>Tích hợp sáng tạo:</em> Phá bỏ hoàn toàn các khung text mặc định, tự tay căn chỉnh khoảng trắng (white-space) theo tiêu chuẩn UI/UX, dịch toàn bộ nội dung sang tiếng Việt. Thiết kế thêm các biểu tượng mũi tên chuyển động xoáy ốc để minh họa sinh động cho Quy luật Phủ định của phủ định.</p>
+                        <h5 style="margin-top:15px;">3. Quá trình thiết kế Infographic trên Canva AI</h5>
+                        <p><strong>Prompt sử dụng:</strong> "Thiết kế một infographic giáo dục, tone màu chủ đạo xanh dương và trắng neon, bố cục dọc, hiện đại, tối giản dành cho học sinh sinh viên."</p>
+                        <p><em>Kết quả Canva AI:</em> Gợi ý 4 mẫu bố cục cân đối nhưng khoảng cách các khối quá khít và tỷ lệ độ dài ảnh chưa phù hợp.</p>
+                        <p><em>Chỉnh sửa cá nhân (Đóng góp 70%):</em> Phá bỏ hoàn toàn khung text mặc định, tự tay căn chỉnh khoảng trắng (white-space) theo tiêu chuẩn UI/UX, dịch toàn bộ nội dung sang tiếng Việt. Tự vẽ thêm các biểu tượng mũi tên chuyển động xoáy ốc để minh họa sinh động cho Quy luật Phủ định của phủ định mà AI không thể tự hiểu để vẽ.</p>
                     `,
                     lessons: `
                         <h4><i class="fa-solid fa-graduation-cap"></i> Bài học kinh nghiệm</h4>
@@ -1344,8 +1472,8 @@
                 }
             },
             6: {
-                title: "Liêm Chính Học Thuật & Quản Trị Đạo Đức AI",
-                tag: "Bài tập 6",
+                title: "Sử dụng AI có trách nhiệm trong học tập và nghiên cứu",
+                tag: "Bài 6 - Mục 6.4",
                 icon: "fa-scale-balanced",
                 tabs: {
                     overview: `
@@ -1383,7 +1511,7 @@
                             <li><strong>Hàm lượng chất xám cá nhân tối cao (Tỷ lệ tự viết >60%):</strong> Cam kết phân tích cốt lõi là tự viết, AI chỉ hỗ trợ dưới 40% dữ liệu thô.</li>
                             <li><strong>Minh bạch công nghệ (Transparency):</strong> Luôn công khai đính kèm Prompt Log ở phụ lục.</li>
                             <li><strong>Nói không với Copy-Paste thô:</strong> Không sao chép nguyên bản, xử lý toàn bộ thông tin qua bộ lọc tư duy cá nhân.</li>
-                            <li><strong>Dùng AI để nâng cấp bản thân, không nâng cấp sự ỷ lại:</strong> Biến AI thành cộng sự phản biện để đào sâu tri thức.</li>
+                            <li><strong>Dùng AI để nâng cấp bản thân, không nâng cấp sự ỷ lại:</strong> Biến AI thành công cụ phản biện để đào sâu tri thức.</li>
                         </ol>
                     `
                 }
