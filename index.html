@@ -498,6 +498,57 @@
             text-align: justify;
         }
 
+        /* --- BEAUTIFUL & EDITORIAL FOOTER DESIGN --- */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.92);
+            border-top: 1px solid #cbd5e1;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            position: relative;
+        }
+        footer::before {
+            content: "✦";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-cream);
+            padding: 0 15px;
+            color: var(--primary-yellow);
+            font-size: 1.25rem;
+        }
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        .footer-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .footer-tag-item {
+            background-color: var(--light-yellow);
+            color: var(--dark-yellow);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(217, 119, 6, 0.15);
+        }
+        .footer-decor {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
         /* --- MODAL SYSTEM WITH INNER INTERACTIVE TABS --- */
         .modal-overlay {
             position: fixed;
@@ -1039,8 +1090,18 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Nguyễn Hồng Hà My. Thiết kế tối giản, tập trung vào chiều sâu học thuật và liêm chính số.</p>
-        <p style="font-size: 0.8rem; margin-top: 5px; color: var(--text-muted);">Đại học Ngoại ngữ - Đại học Quốc gia Hà Nội</p>
+        <div class="footer-content">
+            <p style="font-weight: 600; color: var(--neutral-charcoal);">© 2026 Nguyễn Hồng Hà My • Digital Portfolio</p>
+            <p style="font-size: 0.85rem; max-width: 600px; line-height: 1.6;">Thiết kế hướng tới sự tối giản, tập trung vào chiều sâu tư duy, chất lượng nội dung khoa học và tinh thần học thuật liêm chính trong kỷ nguyên trí tuệ nhân tạo.</p>
+            <div class="footer-tags">
+                <span class="footer-tag-item">Đại học Ngoại ngữ - ĐHQGHN</span>
+                <span class="footer-tag-item">VNU1001_E252053</span>
+                <span class="footer-tag-item">Nhóm 32</span>
+            </div>
+            <div class="footer-decor">
+                <i class="fa-solid fa-code"></i> với <i class="fa-solid fa-heart" style="color: var(--primary-yellow);"></i> bởi Hà My
+            </div>
+        </div>
     </footer>
 
     <!-- INTERACTIVE MODAL OVERLAY WITH SUB-TABS -->
@@ -1062,7 +1123,7 @@
 
     <!-- --- JAVASCRIPT XỬ LÝ CHUYỂN ĐỘNG & TƯƠNG TÁC TAB --- -->
     <script>
-        /* --- DỮ LIỆU NỘI DUNG CHI TIẾT BÀI TẬP --- */
+        /* --- DỮ LIỆU NỘI DUNG CHI TIẾT BÀI TẬP (KHÔNG CẮT BỚT, TRÌNH BÀY ĐẦY ĐỦ NHẤT) --- */
         const modalData = {
             1: {
                 title: "Thao tác cơ bản với tệp tin và thư mục",
@@ -1440,7 +1501,7 @@
                         
                         <h4><i class="fa-solid fa-user-pen"></i> Tỷ lệ đóng góp chất xám cá nhân thực tế</h4>
                         <ul>
-                            <li><strong>Phần nội dung bài viết:</strong> Đóng góp 55% chất xám cá nhân (chỉ giữ lại 45% khung sườn gốc của AI).</li>
+                            <li><strong>Phần nội dung bài viết:</strong> Đóng góp 55% chất xám cá nhân (chỉ giữ lại 45% sườn của AI).</li>
                             <li><strong>Phần thiết kế Infographic:</strong> Đóng góp 70% chất xám cá nhân (phá bỏ hoàn toàn khung text mặc định của Canva AI).</li>
                         </ul>
                     `,
@@ -1450,12 +1511,12 @@
                         <h5>1. Quá trình tạo dựng nội dung Triết học (Gemini & ChatGPT)</h5>
                         <p><strong>Prompt sử dụng:</strong> "Bạn là một chuyên gia Triết học đồng thời là một Content Creator xuất sắc. Hãy xây dựng một dàn ý chi tiết cho bài viết 'Giải mã Phép biện chứng duy vật qua lăng kính đời sống hiện đại'. Yêu cầu: Không dùng ngôn từ học thuật khô khan, hãy liên hệ Quy luật Lượng - Chất với việc phát triển kỹ năng của Gen Z hiện nay và cặp phạm trù Bản chất - Hiện tượng với văn hóa mạng xã hội. Dàn ý gồm 3 phần rõ ràng."</p>
                         <p><em>Kết quả so sánh:</em> Google Gemini đưa ra các ví dụ thực tế rất cập nhật về xu hướng của giới trẻ, hành văn tự nhiên nhưng cấu trúc logic triết học đôi chỗ bị lỏng lẻo. ChatGPT cấu trúc cực kỳ chặt chẽ, tuy nhiên ví dụ thực tế còn mang tính công thức, chưa đột phá về mặt ngôn từ.</p>
-                        <p><em>Chỉnh sửa cá nhân (Đóng góp 55%):</em> Mình chỉ giữ 45% khung sườn lõi. Tự viết lại toàn bộ nội dung chi tiết dựa trên trải nghiệm thực tế: Bác bỏ ví dụ chung chung của AI để thay bằng câu chuyện thực tế "Tích lũy từ việc học 10 từ vựng mỗi ngày để đạt IELTS 7.5" (Quy luật Lượng - Chất) và Hiện tượng "sống ảo" trên Instagram so với áp lực đồng lứa ngoài đời thực (Bản chất - Hiện tượng).</p>
+                        <p><em>Chỉnh sửa cá nhân (Đóng góp 55%):</em> Mình chỉ giữ 45% khung sườn lõi. Tự viết lại toàn bộ nội dung chi tiết dựa trên trải nghiệm thực tế: Bác bỏ ví dụ chung chung của AI để thay bằng câu chuyện thực tế "Tích lũy từ việc học 10 từ vựng mỗi ngày để đạt IELTS 7.5" (Quy luật Lượng - Chất) và Hiện tượng "sống ảo" trên Instagram so với áp lực đồng lứa ngoài thực tế (Bản chất - Hiện tượng).</p>
                         
                         <h5 style="margin-top:15px;">2. Quá trình tạo hình ảnh minh họa bằng Google Gemini</h5>
                         <p>Thực nghiệm với 2 kiểu cấu trúc Prompt khác nhau:</p>
                         <ul>
-                            <li><strong>Kiểu Prompt 1 (Phong cách tự do):</strong> "Hãy vẽ một bức tranh tối giản đầy tính triết lý về quy luật Lượng - Chất. Một người đang kiên trì bước lên những bậc thang được làm từ những cuốn sách dày đang phát sáng. Ở bậc thang trên cùng, khi chạm tới đỉnh, người đó hóa thân thành một loài chim phượng hoàng rực lửa bay vút lên bầu trời." -> <em>Kết quả:</em> Tính nghệ thuật cao, màu sắc huyền ảo nhưng bố cục lộn xộn, không thể hiện rõ tính tuần tự "tích lũy lượng dẫn đến nhảy vọt chất".</li>
+                            <li><strong>Kiểu Prompt 1 (Phong cách tự do):</strong> "Hãy vẽ một bức tranh tối giản đầy tính triết lý về quy luật Lượng - Chất. Một người đang kiên trì bước lên những bậc thang được làm từ những cuốn sách dày đang phát sáng. Ở bậc thang trên cùng, khi chạm tới đỉnh, người đó hóa thân thành một loài chim phượng hoàng rực lửa bay vút lên bầu trời." -> <em>Kết quả:</em> Đẹp huyền ảo nhưng bố cục lộn xộn, không thể hiện rõ tính tuần tự "tích lũy lượng dẫn đến nhảy vọt chất".</li>
                             <li><strong>Kiểu Prompt 2 (Quy định thông số & bố cục chặt chẽ):</strong> "A minimalist infographic vector style illustration, flat design. A straight staircase made of 5 thick books stacked on top of each other increasing in size. A clear human silhouette character is climbing up step by step. On the final step, a smooth transition effect showing the character transforming into a soaring neon eagle. Clean white background, 2D graphic, isometric perspective, high contrast, non-photorealistic --ar 16:9" -> <em>Kết quả:</em> Đường nét sắc sảo, bố cục dứt khoát mang tính chất infographic đồ họa chuyên nghiệp. Bậc thang sách xếp thẳng hàng đại diện trực quan rất tốt cho giai đoạn của "Độ".</li>
                         </ul>
                         <p><em>Chỉnh sửa cá nhân:</em> Chọn phôi Kiểu Prompt 2. Đưa ảnh vào phần mềm để cắt bỏ chi tiết thừa lem màu ở nền trắng và chữ trên gáy sách bị lỗi font. Tự tay thiết kế và chèn các nhãn văn bản (Text Label) chính xác đè lên các bậc thang: Bậc 1, 2, 3 ghi "Tích lũy về Lượng"; Bậc 4 ghi "Điểm nút"; vị trí đại bàng bay lên tạo hiệu ứng chữ nổi bật "BƯỚC NHẢY SANG CHẤT MỚI" để nâng cao giá trị học thuật.</p>
